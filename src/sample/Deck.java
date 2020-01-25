@@ -20,10 +20,6 @@ public class Deck {
 
     public void shuffleDeck(){
         Collections.shuffle(deck);
-        for(Cards card: deck){
-            System.out.print(card.getRanks().getRank()+""+card.getColor().getSign()+" ");
-        }
-
     }
 
 
