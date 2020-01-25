@@ -17,5 +17,4 @@ public class Cards {
         return color;
     }
 
-
 }

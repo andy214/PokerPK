@@ -4,10 +4,11 @@ public class HumanPlayer extends Player {
     private String login;
     private String password;
 
+
     public HumanPlayer(String login, String password) {
         this.login = login;
         this.password = password;
-        this.numberOfChips = 1000;
+        setNumberOfChips(1000);
     }
 
     public String getLogin() {

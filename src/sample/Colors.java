@@ -11,7 +11,7 @@ public enum Colors {
     private String sign;
     private Color color;
 
-    private Colors(String s,Color c){
+    Colors(String s,Color c){
         sign = s;
         color = c;
     }

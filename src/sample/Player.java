@@ -1,10 +1,13 @@
 package sample;
 
+import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
 public class Player {
-    long numberOfChips;
-    Cards[] playersHand;
+    private long numberOfChips;
+    private Cards[] playersHand;
+    private Boolean isFold;
 
     public long getNumberOfChips() {
         return numberOfChips;
@@ -22,23 +25,28 @@ public class Player {
         this.playersHand = playersHand;
     }
 
-    public void call(Text playerChips, int numberToSub){
-        numberOfChips -= numberToSub;
+    public int call(Text playerChips, int pool, Text poolText, int callChips){
+        numberOfChips -= callChips;
+        pool += callChips;
         playerChips.setText(""+numberOfChips);
+        poolText.setText(""+pool);
+
+        return pool;
     }
 
-    public int fold(){
-
-        return 0;
+    public void fold(Group cards, Button call, Button raise){
+        cards.getChildren().clear();
+        call.setDisable(true);
+        raise.setDisable(true);
     }
 
-    public int raise(int raiseChips){
+    public int raise(Text playerChips, int pool, Text poolText, double raiseChips, Button call){
+        numberOfChips -= raiseChips;
+        pool += raiseChips;
+        playerChips.setText(""+numberOfChips);
+        poolText.setText(""+pool);
 
-        return 0;
+        return pool;
     }
 
-    public int allin(){
-
-        return 0;
-    }
 }
